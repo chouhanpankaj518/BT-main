@@ -55,11 +55,11 @@ export default function App() {
       <BrowserRouter>
       
       <Navbar count={count}/>
+    
       <Routes>
-       
+        
         <Route path='/BT/' element={<Home setshowcard={setshowcard} />}/>
         <Route path='/new-arrivals' element={<NewArrivals 
-        // setaddcount={setaddcount}
         addToCart={addToCart} 
         />}/>
         <Route path='/trending' element={<Trending/>}/>
@@ -74,7 +74,7 @@ export default function App() {
         <Route path='/displaypage' element={<Displaypage showcard={showcard}/>}/>
        
         
-          <Route path='/upper-wear' element={<Upperwear />}/>
+          <Route path='/upper-wear' element={<Upperwear setshowcard={setshowcard} />}/>
           <Route path='/Tshirt' element={<Tshirt/>}/>
           <Route path='/Shirt' element={<Shirt/>}/>
           <Route path='/Hoodie' element={<Hoodie/>}/>
@@ -83,9 +83,8 @@ export default function App() {
           cart={cart}
           />}/>
           <Route path='/paymnetpage' element={<Paymentpage/>}/>
-          
-    
       </Routes>
+    
       <Footer/>
       </BrowserRouter>
      

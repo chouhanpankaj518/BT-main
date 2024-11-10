@@ -31,7 +31,7 @@ export default function AddToCart({ cart }) {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 mx-4 sm:mx-auto max-w-3xl mt-20">
+    <div className="w-screen bg-white rounded-lg shadow-lg p-4 sm:p-6 mx-4 sm:mx-auto max-w-3xl mt-20 ">
       {/* Header */}
       <div className="flex items-center justify-between mb-4 sm:mb-6">
         <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Shopping Cart</h2>
@@ -90,9 +90,7 @@ export default function AddToCart({ cart }) {
 
             {/* Remove Button - Desktop */}
             <button className="w-5 h-5 text-red-500 hover:text-red-600" onClick={()=>deleteitem(item.id)}>delete</button>
-            <button className="block sm:block absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <Trash2 className="w-5 h-5 text-red-500 hover:text-red-600" />
-            </button>
+        
           </div>
         ))}
       </div>

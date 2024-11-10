@@ -42,34 +42,14 @@ export default function NewArrivals({addToCart}) {
  
 
   return (
-    <div className=" py-8  ">
+    <div className=" py-8  new-arrivals">
       <h1 className="text-3xl font-bold mb-8 text-center">New Arrivals</h1>
 
-      {/* Featured Product */}
-      {/* <div className="bg-gray-100 rounded-lg shadow-md overflow-hidden mb-12 ">
-        <div className="md:flex">
-          <div className="md:flex-shrink-0">
-            <img className="h-48 w-full object-cover md:w-48" src={newArrivalsData.featuredArrival.image} alt="alt" />
-          </div>
-          <div className="p-8">
-            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Featured New Arrival</div>
-            <h2 className="block mt-1 text-lg leading-tight font-medium text-black">{newArrivalsData.featuredArrival.name}</h2>
-            <p className="mt-2 text-gray-500">{newArrivalsData.featuredArrival.description}</p>
-            <div className="mt-4">
-              <span className="text-2xl font-bold">${newArrivalsData.featuredArrival.price.toFixed(2)}</span>
-              <button className="ml-4 bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition duration-300">Shop Now</button>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
     
     
            <div className="flex flex-col md:flex-row justify-between mb-6">
-        {/* <div className="flex items-center mb-4 md:mb-0">
-          <Clock className="mr-2" />
-          <span className="font-semibold">New Arrivals</span>
-        </div> */}
+
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
           <div className="flex items-center">
             <ChevronDown className="mr-2" />
@@ -143,3 +123,13 @@ export default function NewArrivals({addToCart}) {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+

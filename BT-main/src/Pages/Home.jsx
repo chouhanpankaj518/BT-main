@@ -173,7 +173,7 @@ export default function Home({setshowcard}) {
 
 
       <div 
-      // className="mt-20 mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 grid-cols-2 "
+     
       className="mb-16 grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 mt-20"
       >
 
@@ -184,17 +184,17 @@ export default function Home({setshowcard}) {
   <div
   onClick={()=>hendlepage(category.id)}
     key={index}
-    className='relative xl:w-80 w-48 overflow-hidden xl:h-96 h-80 bg-gray-100 hover:bg-gray-300 pb-10 '
+    className='relative xl:w-80 w-48 overflow-hidden xl:h-96 h-80 bg-gray-100 hover:bg-gray-300 pb-10 cursor-pointer'
   >
     <div className="xl:h-72 line-clamp-2">
       <img
         src={png}
-        alt={category.title || 'Product image'} // Added fallback alt text
+        alt={category.title || 'Product image'} 
         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
       />
     </div>
     
-    {/* Display title below the image */}
+ 
     <div className="p-4">
       <h3 className="text-lg font-semibold line-clamp-1">{category.title}</h3>
       <p className="mt-2">${category.price}</p>
@@ -206,7 +206,7 @@ export default function Home({setshowcard}) {
   
 </div>
      
-      <button onClick={()=>navigate('new-arrivals')} className='border-2 border-black  mt-10 ml-36  xl:ml-[95vh] rounded-md font-semibold p-1 px-5 '>View More</button>
+      <button onClick={()=>navigate('/new-arrivals')} className='border-2 border-black  mt-10 ml-36  xl:ml-[95vh] rounded-md font-semibold p-1 px-5 '>View More</button>
       
       <div className=' h-[500px]'>
         <video src={video}   loop muted autoPlay className='w-full h-[500px]  mt-10 object-cover '></video>
@@ -222,7 +222,7 @@ export default function Home({setshowcard}) {
   
 
       <div 
-      // className="mb-16 grid gap-6 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4  mt-20"
+ 
       className="mb-16 grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 mt-20"
       >
 
@@ -232,7 +232,7 @@ export default function Home({setshowcard}) {
   <div
     key={index}
     onClick={()=>hendlepage(category.id)}
-    className='relative xl:w-80 w-48 overflow-hidden xl:h-96 h-72 bg-gray-100 hover:bg-gray-300 '
+    className='relative xl:w-80 w-48 overflow-hidden xl:h-96 h-72 bg-gray-100 hover:bg-gray-300 cursor-pointer'
   >
     <div className="xl:h-72 ">
       <img
@@ -259,7 +259,7 @@ export default function Home({setshowcard}) {
 
 
 
-      <button onClick={()=>navigate('new-arrivals')} className='border-2 border-black  mt-2 ml-32 xl:ml-[95vh] rounded-md font-semibold p-1 px-5 '>View More</button>
+      <button onClick={()=>navigate('/new-arrivals')} className='border-2 border-black  mt-2 ml-32 xl:ml-[95vh] rounded-md font-semibold p-1 px-5 '>View More</button>
  
  
 
