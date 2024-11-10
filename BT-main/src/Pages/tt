@@ -1,0 +1,55 @@
+   {/* <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y, EffectCoverflow, Autoplay]} 
+        spaceBetween={5} 
+        navigation
+        pagination={false}
+        scrollbar={false}
+        effect="coverflow"
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 50,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        loop={true}
+        breakpoints={{
+          // when window width is >= 640px
+           768: {
+            slidesPerView: 2, // 2 slides for smaller screens
+          },
+       
+          // when window width is >= 1024px
+          1024: {
+            slidesPerView: 3, // 3 slides for larger screens
+          },
+        }}
+        className=" h-[300px] mt-20 "
+      >
+        <SwiperSlide className="flex items-center justify-center">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI7N6ap5l4358wXx4jlC9RgF3Z3Q_pAHRyYw&s" alt="Slide 1" className="w-full h-full object-cover rounded-lg" />
+        </SwiperSlide>
+        <SwiperSlide className="flex items-center justify-center">
+          <img src="https://www.creativefabrica.com/wp-content/uploads/2022/07/30/Anime-Lover-TShirt-Design-Bundle-Graphics-35158811-1-1-580x386.jpg" alt="Slide 2" className="w-full h-full object-cover rounded-lg" />
+        </SwiperSlide>
+        <SwiperSlide className="flex items-center justify-center">
+          <img src="https://www.creativefabrica.com/wp-content/uploads/2022/04/23/Anime-TShirt-Design-Bundle-Graphics-29517084-2-580x386.jpg" alt="Slide 3" className="w-full h-full object-cover rounded-lg" />
+        </SwiperSlide>
+        <SwiperSlide className="flex items-center justify-center">
+          <img src="https://i5.walmartimages.com/seo/If-It-Doesn-t-Have-To-Do-With-Anime-Video-Game-Or-Food-T-Shirt_5e8a05fd-a7dc-4552-8950-326b312c03f6.bce5854dd3a4088a94ce44b77ede0256.jpeg" alt="Slide 4" className="w-full h-full object-cover rounded-lg" />
+        </SwiperSlide>
+        <SwiperSlide className="flex items-center justify-center">
+          <img src="https://m.media-amazon.com/images/I/A16YlCTQRlL._CLa%7C2140%2C2000%7C71QvkaS5vcL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png" alt="Slide 5" className="w-full h-full object-cover rounded-lg" />
+        </SwiperSlide>
+        <SwiperSlide className="flex items-center justify-center">
+          <img src="https://m.media-amazon.com/images/I/A16YlCTQRlL._CLa%7C2140%2C2000%7C71QvkaS5vcL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png" alt="Slide 6" className="w-full h-full object-cover rounded-lg" />
+        </SwiperSlide>
+        <SwiperSlide className="flex items-center justify-center">
+          <img src="https://m.media-amazon.com/images/I/A16YlCTQRlL._CLa%7C2140%2C2000%7C71QvkaS5vcL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png" alt="Slide 7" className="w-full h-full object-cover rounded-lg" />
+        </SwiperSlide>
+        <SwiperSlide className="flex items-center justify-center">
+          <img src="https://m.media-amazon.com/images/I/A16YlCTQRlL._CLa%7C2140%2C2000%7C71QvkaS5vcL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png" alt="Slide 8" className="w-full h-full object-cover rounded-lg" />
+        </SwiperSlide>
+      </Swiper> */}
+      <br/>
+      
