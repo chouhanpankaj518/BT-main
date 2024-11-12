@@ -1,8 +1,7 @@
 
 import React, { useState } from 'react';
-import { Clock, Star, ChevronDown } from 'lucide-react';
-
-
+import { Star, ChevronDown } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const newArrivalsData = {
   featuredArrival: {
@@ -42,7 +41,8 @@ export default function NewArrivals({addToCart}) {
  
 
   return (
-    <div className=" py-8  new-arrivals">
+    <div className='xl:ml-0 ml-[-32px] p-10'>
+    <div className="py-8 ">
       <h1 className="text-3xl font-bold mb-8 text-center">New Arrivals</h1>
 
 
@@ -50,7 +50,7 @@ export default function NewArrivals({addToCart}) {
     
            <div className="flex flex-col md:flex-row justify-between mb-6">
 
-        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 ml-3">
           <div className="flex items-center">
             <ChevronDown className="mr-2" />
             <span className="mr-2">Sort by:</span>
@@ -117,9 +117,9 @@ export default function NewArrivals({addToCart}) {
     </div>
   </div>
 ))}
-
       </div>
-
+    </div>
+<Footer />
     </div>
   );
 }

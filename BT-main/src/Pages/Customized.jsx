@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingCart } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const Customized = () => {
   const [customText, setCustomText] = useState('');
@@ -16,9 +16,10 @@ const Customized = () => {
   const price = 29.99;
 
   return (
+    <div className='xl:ml-0 ml-[-32px] '>
     <div className="max-w-6xl mx-auto p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Preview Section */}
+     
         <div className="p-6 border border-gray-300 rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Preview</h2>
           <div
@@ -48,7 +49,7 @@ const Customized = () => {
               // maxLength={50}
               className="w-full p-2 border border-gray-300 rounded-md"
             />
-            {/* <p className="text-sm text-gray-500 mt-1">{50 - customText.length} characters remaining</p> */}
+        
           </div>
 
   
@@ -132,17 +133,16 @@ const Customized = () => {
 
     
           <div className="mt-6">
-            {/* <div className="flex justify-between items-center mb-4">
-              <span className="text-lg font-medium">Total Price:</span>
-              <span className="text-2xl font-bold">${(price * quantity).toFixed(2)}</span>
-            </div> */}
+        
             <button className="w-full h-12 flex items-center justify-center bg-indigo-500 text-white rounded-md hover:bg-indigo-600">
-              {/* <ShoppingCart className="mr-2 h-5 w-5" /> */}
+       
                Submit
             </button>
           </div>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

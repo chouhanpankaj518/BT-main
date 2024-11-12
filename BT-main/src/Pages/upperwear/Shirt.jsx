@@ -7,6 +7,7 @@ import fourth from "../../assets/Shirt/fourth.png"
 import five from "../../assets/Shirt/five.webp"
 import six from "../../assets/Shirt/six.webp"
 import seven from "../../assets/Shirt/seven.webp"
+import Footer from '../../components/Footer';
 
 
 
@@ -87,7 +88,7 @@ const Shirt = () => {
   ];
 
   return (
-    <div>
+    <div className='xl:ml-0 ml-[-30px]'>
 
     <div className="container mx-auto px-4 mt-5">
       {
@@ -326,8 +327,8 @@ const Shirt = () => {
      
       <div className="mt-20 w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-20">
         {imagesdata.map((item, index) => (
-          <div key={index} className="p-4 border rounded-lg shadow-lg cursor-pointer xl:h-96 h-44 " onClick={()=>selectcard(item.id)}>
-           <div className='p-34 xl:h-60 h-20'>
+          <div key={index} className="p-4 border rounded-lg shadow-lg cursor-pointer xl:h-96 h-52 " onClick={()=>selectcard(item.id)}>
+           <div className='p-34 xl:h-60 h-32'>
            <img src={item.image} alt={item.title} className='w-full h-full '/>
            </div>
             <div className="text-center">
@@ -339,7 +340,7 @@ const Shirt = () => {
       </div>
     </div>
     
-    
+    <Footer/>
     </div>
   );
 };

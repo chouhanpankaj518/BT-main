@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer';
 export default function upperwear({setshowcard}) {
    let navigate = useNavigate()
   const upperwearItems = [
@@ -19,8 +20,8 @@ export default function upperwear({setshowcard}) {
   
   
   return (
-    <div>
-    <div data-aos="zoom-in" className='flex justify-center align-middle gap-20 w-full bg-transparent font-semibold  xl:p-5 '> 
+    <div className='xl:ml-0 ml-[-32px] p-10'>
+    <div data-aos="zoom-in" className='flex justify-center align-middle gap-14 w-full bg-transparent font-semibold  xl:p-5 '> 
      <Link to={"/Tshirt"} >TShirt</Link>
      <Link to={"/Shirt"}>Shirt</Link>
      <Link to={"/Hoodie"}>Hoodie</Link>
@@ -40,6 +41,7 @@ export default function upperwear({setshowcard}) {
             </div>
         ))}
       </div>
+      <Footer/>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Sliders, ChevronDown } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const jeansData = [
   { id: 1, name: 'Slim Fit Blue Jeans', price: 49.99,
@@ -89,6 +90,7 @@ export default function Bottomear({ addToCart }) {
   };
 
   return (
+    <div className='xl:ml-0 ml-[-32px]'>
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Bottom Wear - Jeans</h1>
 
@@ -161,6 +163,8 @@ export default function Bottomear({ addToCart }) {
           </div>
         ))}
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 }

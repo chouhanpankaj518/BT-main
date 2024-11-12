@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Sun, Cloud, Leaf, Snowflake } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const seasonalData = {
   seasons: [
@@ -46,15 +47,16 @@ const seasonalData = {
   },
 };
 
-export default function Seasonals() {
+export default function Seasonals({addToCart}) {
   const [selectedSeason, setSelectedSeason] = useState('summer');
 
   return (
+    <div className='xl:ml-0 ml-[-30px] xl:p-0 p-4'>
     <div className='w-full  mt-10 xl:ml-0'>
       <h1 className="text-3xl font-bold mb-8 text-center">Seasonal Collections</h1>
 
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
         {seasonalData.seasons.map((season) => (
           <button
             key={season.id}
@@ -71,7 +73,7 @@ export default function Seasonals() {
       </div>
 
     
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 p-4">
         {seasonalData.products[selectedSeason].map((product) => (
           <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
            <div  className="h-32 sm:h-40 md:h-48 lg:h-52 xl:h-60 2xl:h-64">
@@ -80,7 +82,9 @@ export default function Seasonals() {
             <div className="p-2">
               <h3 className="text-lg font-semibold mb-1 line-clamp-1  ">{product.name}</h3>
               <p className="text-gray-600 mb-4">${product.price.toFixed(2)}</p>
-              <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-4 rounded transition duration-300">
+              <button
+               onClick={() => addToCart(product)}
+               className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-4 rounded transition duration-300">
                 Add to Cart
               </button>
             </div>
@@ -88,6 +92,8 @@ export default function Seasonals() {
         ))}
       </div>
 
+    </div>
+    <Footer/>
     </div>
   );
 }

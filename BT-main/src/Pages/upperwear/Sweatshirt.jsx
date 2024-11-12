@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Heart, Minus, Plus, Star } from 'lucide-react';
+import Footer from '../../components/Footer';
 // import Upperwear from './Upperwear';
 const Sweatshirt = () => {
   const [selectedColor, setSelectedColor] = useState('black');
@@ -23,7 +24,7 @@ const Sweatshirt = () => {
   };
 
   return (
-    <div>
+    <div className='xl:ml-0 ml-[-32px] '>
     <div className="container mx-auto px-4 mt-5">
  {/* <Upperwear/> */}
  
@@ -147,6 +148,7 @@ const Sweatshirt = () => {
       </div>
     </div>
     </div>
+    <Footer/>
     </div>
   );
 };

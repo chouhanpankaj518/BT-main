@@ -1,82 +1,205 @@
-import React, { useState } from "react";
 
-const Paymentpage = () => {
-  const [cardNumber, setCardNumber] = useState("");
-  const [expiryDate, setExpiryDate] = useState("");
-  const [cvv, setCvv] = useState("");
-  const [name, setName] = useState("");
+import React, { useState } from 'react';
+import { CreditCard, Building2, Wallet } from 'lucide-react';
 
-  const handlePayment = (e) => {
-    e.preventDefault();
-    // Add payment processing logic here
-    alert("Payment processed successfully!");
-  };
+export default function PaymentPage() {
+  const [selectedMethod, setSelectedMethod] = useState('');
+  const [selectedBank, setSelectedBank] = useState('');
+
+  const banks = [
+    // Public Sector Banks
+    { category: "Public Sector Banks", banks: [
+      "State Bank of India",
+      "Bank of Baroda",
+      "Bank of India",
+      "Bank of Maharashtra",
+      "Canara Bank",
+      "Central Bank of India",
+      "Indian Bank",
+      "Indian Overseas Bank",
+      "Punjab National Bank",
+      "Punjab & Sind Bank",
+      "Union Bank of India",
+      "UCO Bank"
+    ]},
+    // Private Sector Banks
+    { category: "Private Sector Banks", banks: [
+      "Axis Bank",
+      "Bandhan Bank",
+      "CSB Bank",
+      "City Union Bank",
+      "DCB Bank",
+      "Dhanlaxmi Bank",
+      "Federal Bank",
+      "HDFC Bank",
+      "ICICI Bank",
+      "IDBI Bank",
+      "IDFC First Bank",
+      "IndusInd Bank",
+      "Jammu & Kashmir Bank",
+      "Karnataka Bank",
+      "Karur Vysya Bank",
+      "Kotak Mahindra Bank",
+      "Nainital Bank",
+      "RBL Bank",
+      "South Indian Bank",
+      "Tamilnad Mercantile Bank",
+      "YES Bank"
+    ]},
+    // Foreign Banks
+    { category: "Foreign Banks", banks: [
+      "Standard Chartered Bank",
+      "HSBC Bank",
+      "Deutsche Bank",
+      "Citibank",
+      "Bank of America"
+    ]}
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
-      <div className="bg-white shadow-lg rounded-lg w-full max-w-md p-6">
-        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Payment Details</h2>
-        
-        <form onSubmit={handlePayment} className="space-y-4">
-          <div>
-            <label className="block text-gray-600">Card Number</label>
+    <div className="border  w-screen m-20 mx-auto p-6 space-y-6">
+      <h1 className="text-2xl font-bold mb-4">Select Payment Method</h1>
+      
+      {/* Payment Methods */}
+      <div className="space-y-4">
+        {/* Net Banking */}
+        <div className=" rounded-lg p-4 hover:border-blue-500 cursor-pointer">
+          <label className="flex items-center space-x-3">
             <input
-              type="text"
-              value={cardNumber}
-              onChange={(e) => setCardNumber(e.target.value)}
-              placeholder="1234 5678 9012 3456"
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+              type="radio"
+              name="paymentMethod"
+              value="netbanking"
+              checked={selectedMethod === 'netbanking'}
+              onChange={(e) => setSelectedMethod(e.target.value)}
+              className="w-4 h-4"
             />
-          </div>
+            <Building2 className="w-5 h-5" />
+            <span className="font-medium">Net Banking</span>
+          </label>
+          
+          {selectedMethod === 'netbanking' && (
+            <div className="mt-4 ml-7">
+              <select 
+                value={selectedBank}
+                onChange={(e) => setSelectedBank(e.target.value)}
+                className="w-full p-2 border rounded bg-white"
+              >
+                <option value="">Select your bank</option>
+                {banks.map((category) => (
+                  <optgroup key={category.category} label={category.category}>
+                    {category.banks.map((bank) => (
+                      <option key={bank} value={bank}>
+                        {bank}
+                      </option>
+                    ))}
+                  </optgroup>
+                ))}
+              </select>
+            </div>
+          )}
+        </div>
 
-          <div>
-            <label className="block text-gray-600">Expiry Date</label>
+        {/* Credit Card */}
+        <div className="border rounded-lg p-4 hover:border-blue-500 cursor-pointer">
+          <label className="flex items-center space-x-3">
             <input
-              type="text"
-              value={expiryDate}
-              onChange={(e) => setExpiryDate(e.target.value)}
-              placeholder="MM/YY"
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+              type="radio"
+              name="paymentMethod"
+              value="credit"
+              checked={selectedMethod === 'credit'}
+              onChange={(e) => setSelectedMethod(e.target.value)}
+              className="w-4 h-4"
             />
-          </div>
+            <CreditCard className="w-5 h-5" />
+            <span className="font-medium">Credit Card</span>
+          </label>
+          
+          {selectedMethod === 'credit' && (
+            <div className="mt-4 ml-7 space-y-3">
+              <input
+                type="text"
+                placeholder="Card Number"
+                className="w-full p-2 border rounded"
+              />
+              <div className="flex space-x-4">
+                <input
+                  type="text"
+                  placeholder="MM/YY"
+                  className="w-1/3 p-2 border rounded"
+                />
+                <input
+                  type="text"
+                  placeholder="CVV"
+                  className="w-1/3 p-2 border rounded"
+                />
+              </div>
+              <input
+                type="text"
+                placeholder="Card Holder Name"
+                className="w-full p-2 border rounded"
+              />
+            </div>
+          )}
+        </div>
 
-          <div>
-            <label className="block text-gray-600">CVV</label>
+        {/* Debit Card */}
+        <div className="border rounded-lg p-4 hover:border-blue-500 cursor-pointer">
+          <label className="flex items-center space-x-3">
             <input
-              type="password"
-              value={cvv}
-              onChange={(e) => setCvv(e.target.value)}
-              placeholder="123"
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+              type="radio"
+              name="paymentMethod"
+              value="debit"
+              checked={selectedMethod === 'debit'}
+              onChange={(e) => setSelectedMethod(e.target.value)}
+              className="w-4 h-4"
             />
-          </div>
-
-          <div>
-            <label className="block text-gray-600">Name on Card</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Full Name"
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors"
-          >
-            Pay Now
-          </button>
-        </form>
+            <Wallet className="w-5 h-5" />
+            <span className="font-medium">Debit Card</span>
+          </label>
+          
+          {selectedMethod === 'debit' && (
+            <div className="mt-4 ml-7 space-y-3">
+              <input
+                type="text"
+                placeholder="Card Number"
+                className="w-full p-2 border rounded"
+              />
+              <div className="flex space-x-4">
+                <input
+                  type="text"
+                  placeholder="MM/YY"
+                  className="w-1/3 p-2 border rounded"
+                />
+                <input
+                  type="text"
+                  placeholder="CVV"
+                  className="w-1/3 p-2 border rounded"
+                />
+              </div>
+              <input
+                type="text"
+                placeholder="Card Holder Name"
+                className="w-full p-2 border rounded"
+              />
+            </div>
+          )}
+        </div>
       </div>
+
+      {/* Payment Button */}
+      {selectedMethod && (
+        <button 
+          className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors"
+          onClick={() => {
+            const message = selectedMethod === 'netbanking' && selectedBank
+              ? `Processing ${selectedMethod} payment through ${selectedBank}...`
+              : `Processing ${selectedMethod} payment...`;
+            alert(message);
+          }}
+        >
+          Pay Now
+        </button>
+      )}
     </div>
   );
-};
-
-export default Paymentpage;
-
-
-
-
-
+}

@@ -3,11 +3,11 @@ import React, { useEffect,useState } from 'react';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import { FcLike } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
-import Tshirt from "../assets/T shirt.png"
+
 import png from "../assets/npg tshirt.png"
 import axios from 'axios'
 import Carousel from 'react-bootstrap/Carousel';
-
+import Footer from '../components/Footer'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -15,7 +15,7 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/effect-coverflow';
 import video from "../assets/AnimeV.webm"
 import benner from "../assets/banner/anime-banner.jpg"
-import cardTshirt from "../assets/cards/anime t shirt.png"
+// import cardTshirt from "../assets/cards/anime t shirt.png"
 import seasonal from "../assets/cards/sweatshirt.png"
 import clothing from "../assets/cards/many t shirts.png"
 
@@ -46,7 +46,7 @@ export default function Home({setshowcard}) {
   },[open,products])
 
   function hendlepage(id){
-    let data = products.filter(item=>item.id == id)
+    let data = products.filter(item=>item.id === id)
     setshowcard(data)
     navigate("/displaypage")
   }
@@ -54,7 +54,7 @@ export default function Home({setshowcard}) {
   return (
 
 
-    <div className="w-full  mt-10 xl:ml-0 ">
+    <div className="w-full mt-10 xl:ml-0">
       
       <Carousel interval={3000} controls={true} indicators={true}>
       <Carousel.Item>
@@ -280,7 +280,7 @@ export default function Home({setshowcard}) {
     ))
   }
 </div>
-
+<Footer/>
     </div>
     
   );

@@ -43,25 +43,25 @@ export default function Navbar({count}) {
         onClick={toggleMenu}
       >
         {isMenuOpen ? 
-          <IoIosClose className='text-4xl mt-5 sticky  top-10 ml-10 ' /> :
-          <IoIosMenu className='text-4xl ' />
+          <IoIosClose className='text-4xl mt-5 sticky  top-10 ml-10'/> :
+          <IoIosMenu className='text-4xl'/>
         }
       </button>
 
       {/* Main Navigation */}
-      <nav className="flex flex-col justify-around items-center ">
+      <nav className="flex flex-col justify-around items-center xl:ml-0 ml-[-30px]">
  
-        <div className="w-full flex  lg:flex-row xl:justify-around justify-around   items-center xL:gap-5   xl:mt-3 mt-12 ">
+        <div className="w-full flex lg:flex-row xl:justify-around justify-around items-center xL:gap-5 xl:mt-3 mt-12 ">
  
  
           <img 
           src={logo} 
           alt="logo"
           className='logo size-44 xl:w-52 xl:mt-[-15px] cursor-pointer'
-          onClick={toggleInputVisibility} // Add click handler to logo
-            />
+          onClick={toggleInputVisibility} 
+          />
 
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-2">
             <div className={`relative w-52 transition-all duration-500 ease-in-out ${isInputVisible ? 'max-w-xs opacity-100' : 'max-w-0 opacity-0'}`}>
               <TextField
                 className="xl:w-full "
@@ -100,7 +100,7 @@ export default function Navbar({count}) {
         >
           <div className={`flex flex-col lg:flex-row gap-6 lg:gap-12 text-xl ${isMenuOpen ? 'translate-x-0  mt-10'  : '-translate-x-full lg:translate-x-0' }`}>
             
-            <Link to="/BT/" className="hover:text-blue-500" onClick={()=>setIsMenuOpen(false)}>Home</Link>
+            <Link to="/" className="hover:text-blue-500" onClick={()=>setIsMenuOpen(false)}>Home</Link>
             <Link to="/new-arrivals" className="hover:text-blue-500"  onClick={()=>setIsMenuOpen(false)} >New Arrivals</Link>
             <Link to="/trending" className="hover:text-blue-500"  onClick={()=>setIsMenuOpen(false)} >Trending</Link>
             <Link to="/customized" className="hover:text-blue-500"  onClick={()=>setIsMenuOpen(false)} >Customized</Link>

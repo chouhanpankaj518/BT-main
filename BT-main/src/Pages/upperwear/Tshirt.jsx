@@ -4,6 +4,7 @@ import first from "../../assets/Tshirt/first.webp";
 import second from "../../assets/Tshirt/second.webp";
 import third from "../../assets/Tshirt/third.jpg";
 import five from "../../assets/Tshirt/five.jpg";
+import Footer from '../../components/Footer';
 
 const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 const colors = ['White', 'Black', 'Gray', 'Blue', 'Red'];
@@ -73,6 +74,7 @@ const Tshirt = () => {
   }
 
   return (
+    <div className='xl:ml-0 ml-[-32px]'>
     <div className="container mx-auto px-4 py-8">
       
     {open ?(
@@ -242,6 +244,8 @@ const Tshirt = () => {
           </div>
         ))}
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

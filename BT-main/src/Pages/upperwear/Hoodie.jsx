@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Star, ShoppingCart } from 'lucide-react';
+import Footer from '../../components/Footer';
 
 const Hoodie = () => {
   const [selectedSize, setSelectedSize] = useState('');
@@ -18,6 +19,7 @@ const Hoodie = () => {
   };
 
   return (
+    <div className='xl:ml-0 ml-[-30px] xl:p-0 p-4'>
     <div className="max-w-6xl mx-auto p-8">
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/2">
@@ -86,6 +88,8 @@ const Hoodie = () => {
           </button>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

@@ -63,7 +63,8 @@
     transition: 0.5s;
  }   
 @media screen and (max-width: 768px) {
-    
+
+ 
     
     .searchfield{
        margin-left: -150px;
@@ -71,8 +72,6 @@
     .searchfield button{
        font-size: small;
     }
-
-   
     .navlink {
         margin-left: 0;
         letter-spacing: 1px;
@@ -93,14 +92,16 @@
     }
 
     .logo {
-        margin: -45px;
+        margin: -45px;     
     }
-
+/* 
     .container {
         position: relative;
         margin-left: 50px;
-    }
-
+    } */
+     
+    
+     /* foorter page css */
     .footerbox {
         position: absolute;
         left: 100px;
@@ -135,7 +136,7 @@
 }
 
 @media screen and (max-width: 400px) {
-   
+ 
 
     .location-icon {
         top: 80px;

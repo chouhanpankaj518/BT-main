@@ -15,7 +15,7 @@ import Tshirt from './Pages/upperwear/Tshirt'
 import Shirt from './Pages/upperwear/Shirt'
 import Hoodie from './Pages/upperwear/Hoodie'
 import Sweatshirt from './Pages/upperwear/Sweatshirt'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
 import Addtocard from './Pages/Addtocard'
@@ -58,7 +58,7 @@ export default function App() {
     
       <Routes>
         
-        <Route path='/BT/' element={<Home setshowcard={setshowcard} />}/>
+        <Route path='/' element={<Home setshowcard={setshowcard} />}/>
         <Route path='/new-arrivals' element={<NewArrivals 
         addToCart={addToCart} 
         />}/>
@@ -67,7 +67,7 @@ export default function App() {
         <Route path='/bottom-wear' element={<Bottomwear
          addToCart={addToCart} 
         />}/>
-        <Route path='/seasonals' element={<Seasonals/>}/>
+        <Route path='/seasonals' element={<Seasonals  addToCart={addToCart} />}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/SignUp' element={<SignUp/>}/>
         
@@ -85,7 +85,7 @@ export default function App() {
           <Route path='/paymnetpage' element={<Paymentpage/>}/>
       </Routes>
     
-      <Footer/>
+      {/* <Footer/> */}
       </BrowserRouter>
      
     </div>

@@ -1,16 +1,7 @@
-import React, { useState } from 'react';
-import { Truck, Star, TrendingUp } from 'lucide-react';
+import {  Star } from 'lucide-react';
 import Carousel from 'react-bootstrap/Carousel';
-// const trendingData = [
+import Footer from '../components/Footer';
 
-//     { id: 1, name: 'Limited Edition Graphic Tee', price: 29.99,
-//       image: 'https://media.istockphoto.com/id/1452313270/photo/t-shirt-design.webp?a=1&b=1&s=612x612&w=0&k=20&c=OBdJ2HzXDnwMrRjvdgUjjBdpsMbRQFzt8Yd6JIlDQis=' },
-//     { id: 2, name: 'Vintage Wash Denim Jeans', price: 69.99, 
-//       image: 'https://media.istockphoto.com/id/1280723408/photo/blue-jeans-isolated-on-white-background-beautiful-jeans.jpg?s=612x612&w=0&k=20&c=9QXAeo4VV77I5o3Tz4X20dmRoa-hrUvFl1EwWLQ8rxk=' },
-//     { id: 3, name: 'Eco-Friendly Cotton T-Shirt', price: 24.99,
-//       image: 'https://media.istockphoto.com/id/165174355/photo/tie-dye-shirt.jpg?s=612x612&w=0&k=20&c=hwHs_2bfniwQsEEtT4bUmX3RU5T5P8tSRzVNUb5OSnM=' },
-  
-// ]
 
 
 
@@ -55,49 +46,11 @@ const  popularProducts = [
 ]
 
 export default function Trending() {
-  const [currentFeaturedItem, setCurrentFeaturedItem] = useState(0);
 
-  // const nextFeaturedItem = () => {
-  //   setCurrentFeaturedItem((prev) => (prev + 1) % trendingData.length);
-  // };
-
-  // const prevFeaturedItem = () => {
-  //   setCurrentFeaturedItem((prev) => (prev - 1 + trendingData.featuredItems.length) % trendingData.featuredItems.length);
-  // };
 
   return (
-    <div className="container mx-auto px-0 py-8 overflow-hidden">
-      {/* <h1 className="text-3xl font-bold mb-8 text-center">Trending Now</h1>
-
-  
-  
-      <div className="relative mb-12">
-        <div className="overflow-hidden rounded-lg shadow-lg">
- 
- 
-          
-          <img 
-  src={trendingData[currentFeaturedItem].image} 
-  alt={trendingData[currentFeaturedItem].name} 
-  className="w-full h-96 object-cover"
-/>
-<div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-  <h2 className="text-2xl font-bold mb-2">{trendingData[currentFeaturedItem].name}</h2>
-  <p className="text-xl">${trendingData[currentFeaturedItem].price}</p>
-</div>
-          
-        </div>
-        <button onClick={prevFeaturedItem} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md transition-all duration-300">
-          &#10094;
-        </button>
-        <button onClick={nextFeaturedItem} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md transition-all duration-300">
-          &#10095;
-        </button>
-      </div> */}
-      
-      
-      
-      
+    <div className='xl:ml-0 ml-[-32px] p-10'>
+    <div className="px-0 py-8 overflow-hidden">
       
       <Carousel interval={3000} controls={true} indicators={true}>
       <Carousel.Item>
@@ -131,10 +84,7 @@ export default function Trending() {
       </Carousel.Item>
     </Carousel>
       
-      
-      
-      
-
+    
       {/* Trending Categories */}
       <h2 className="text-2xl font-bold mb-4">Trending Categories</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
@@ -166,7 +116,9 @@ export default function Trending() {
         ))}
       </div>
 
-     
     </div>
+    <Footer/>
+    </div>
+     
   );
 }

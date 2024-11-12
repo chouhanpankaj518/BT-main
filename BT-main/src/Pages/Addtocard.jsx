@@ -1,23 +1,23 @@
 
 
 import React, { useState } from 'react';
-import { Trash2, Plus, Minus, ShoppingBag } from 'lucide-react';
+import { Plus, Minus, ShoppingBag } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-export default function AddToCart({ cart }) {
+export default function AddToCart({cart}) {
   const [carts , setcart]=useState(cart)
   let navigate = useNavigate()
   
   function deleteitem(id){
-    alert(id)
-    let data = cart.filter(item=>item.id != id)
+    let data = carts.filter(item=>item.id !== id)
     setcart(data)
+    console.log("data",data)
   }
   
   const totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   if (!cart.length) {
     return (
-      <div className="min-h-[300px] sm:min-h-[400px] flex flex-col items-center justify-center p-4 sm:p-8 bg-white rounded-lg shadow-lg mx-4 sm:mx-auto max-w-lg ">
+      <div className="w-full min-h-[300px] sm:min-h-[400px] flex flex-col items-center justify-center p-4 sm:p-8 bg-white rounded-lg shadow-lg mx-4 sm:mx-auto xl:mr-0 xl:ml-0 mr-48 ml-[-5px]">
         <div className="w-16 h-16 sm:w-24 sm:h-24 mb-4 bg-gray-100 rounded-full flex items-center justify-center">
           <ShoppingBag className="w-8 h-8 sm:w-12 sm:h-12 text-gray-400" />
         </div>
@@ -31,7 +31,7 @@ export default function AddToCart({ cart }) {
   }
 
   return (
-    <div className="w-screen bg-white rounded-lg shadow-lg p-4 sm:p-6 mx-4 sm:mx-auto max-w-3xl mt-20 ">
+    <div className="m-10 w-full bg-white rounded-lg shadow-lg p-4 sm:p-6 mx-10 sm:mx-auto mt-10 xl:mr-0 xl:ml-0 mr-48 ml-[-5px]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4 sm:mb-6">
         <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Shopping Cart</h2>
@@ -39,7 +39,7 @@ export default function AddToCart({ cart }) {
       </div>
 
       {/* Cart Items */}
-      <div className="space-y-4">
+      <div className="space-y-4 w-full">
         {carts.map((item) => (
           <div 
             key={item.id} 
@@ -64,9 +64,7 @@ export default function AddToCart({ cart }) {
                   <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
                   <p className="text-sm text-gray-500">{item.color} - Size {item.size}</p>
                 </div>
-                <button className="sm:hidden">
-                  <Trash2 className="w-5 h-5 text-red-500 hover:text-red-600"  />
-                </button>
+           
               </div>
               
               <div className="mt-4 sm:mt-2 flex flex-col sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -88,14 +86,14 @@ export default function AddToCart({ cart }) {
               </div>
             </div>
 
-            {/* Remove Button - Desktop */}
-            <button className="w-5 h-5 text-red-500 hover:text-red-600" onClick={()=>deleteitem(item.id)}>delete</button>
+            <button 
+            className="w-5 h-5 text-red-500 hover:text-red-600"
+             onClick={()=>deleteitem(item.id)}>delete</button>
         
           </div>
         ))}
       </div>
 
-      {/* Cart Summary */}
       <div className="mt-6 sm:mt-8 border-t pt-4 sm:pt-6">
        
        
