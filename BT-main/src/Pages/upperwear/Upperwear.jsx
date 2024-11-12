@@ -20,7 +20,7 @@ export default function upperwear({setshowcard}) {
   
   
   return (
-    <div className='xl:ml-0 ml-[-32px] p-10'>
+    <div className='xl:ml-0 ml-[-32px] p-10 xl:p-0'>
     <div data-aos="zoom-in" className='flex justify-center align-middle gap-14 w-full bg-transparent font-semibold  xl:p-5 '> 
      <Link to={"/Tshirt"} >TShirt</Link>
      <Link to={"/Shirt"}>Shirt</Link>

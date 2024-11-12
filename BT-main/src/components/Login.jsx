@@ -7,12 +7,12 @@ export default function Login() {
   let Navigate = useNavigate()
   
   return (
-    <div className='w-full h-screen flex items-center justify-center'>
+    <div className='w-full h-screen flex items-center justify-center '>
       <div className='w-full max-w-5xl h-[71vh] flex shadow-2xl rounded-md overflow-hidden'>
-        <div className='w-1/2 h-full bg-white rounded-l-md'>
-          <img className='w-full h-full object-cover' src='https://img.freepik.com/premium-vector/group-paper-shopping-bag-shopping-cart_37787-553.jpg' alt='Login' />
+        <div className='lg:w-1/2 h-full bg-white rounded-l-md'>
+          <img className='w-full h-full object-cover hidden lg:block' src='https://img.freepik.com/premium-vector/group-paper-shopping-bag-shopping-cart_37787-553.jpg' alt='Login' />
         </div>
-        <div className='w-1/2 h-full bg-white rounded-r-md p-10'>
+        <div className='lg:w-1/2 mr-20 h-full bg-white rounded-r-md p-10 '>
           <h2 className='text-3xl font-bold text-center mb-10'>Sign In</h2>
           <form>
             <label htmlFor='username' className="block font-medium text-2xl text-gray-600 mb-2">Username</label>

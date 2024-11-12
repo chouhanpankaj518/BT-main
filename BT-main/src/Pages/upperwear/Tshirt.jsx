@@ -74,7 +74,7 @@ const Tshirt = () => {
   }
 
   return (
-    <div className='xl:ml-0 ml-[-32px]'>
+    <div className='xl:ml-0 ml-[-32px] '>
     <div className="container mx-auto px-4 py-8">
       
     {open ?(
@@ -82,7 +82,7 @@ const Tshirt = () => {
       {selectedCard.map((selectdata , index)=>(
           <div key={index}>
         
-      <div  className="flex flex-col md:flex-row">
+      <div  className="flex flex-col md:flex-row ">
        
         <div className="md:w-1/2 mb-8  md:mb-0 ">
           <img
@@ -233,7 +233,7 @@ const Tshirt = () => {
       {/* Images Section */}
       <div className="mt-20 w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {imagesdata.map((item, index) => (
-          <div key={index} className="p-4 border rounded-lg shadow-lg xl:h-96 h-44 " onClick={()=>selectcard(item.id)}>
+          <div key={index} className="cursor-pointer p-4 border rounded-lg shadow-lg xl:h-96 h-44 " onClick={()=>selectcard(item.id)}>
            <div className='p-34 xl:h-60 h-20'>
            <img src={item.img} alt={item.title} className='w-full h-full '/>
            </div>

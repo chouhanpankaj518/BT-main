@@ -62,7 +62,7 @@ export default function App() {
         <Route path='/new-arrivals' element={<NewArrivals 
         addToCart={addToCart} 
         />}/>
-        <Route path='/trending' element={<Trending/>}/>
+        <Route path='/trending' element={<Trending setshowcard={setshowcard}/>}/>
         <Route path="/customized" element={<Customized />}/>
         <Route path='/bottom-wear' element={<Bottomwear
          addToCart={addToCart} 

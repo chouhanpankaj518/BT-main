@@ -16,7 +16,7 @@ const Customized = () => {
   const price = 29.99;
 
   return (
-    <div className='xl:ml-0 ml-[-32px] '>
+    <div className='xl:ml-0 ml-[-32px] p-10 xl:p-0'>
     <div className="max-w-6xl mx-auto p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
      

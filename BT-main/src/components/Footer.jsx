@@ -10,8 +10,8 @@ import { FaSquareTwitter, FaInstagram } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black text-white">
-      <div className="container mx-auto px-4 py-8 md:py-10">
+    <footer className="w-full bg-black text-white pr-3">
+      <div className="container mx-auto px-4ts py-8 md:py-10">
         
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
           
@@ -43,7 +43,7 @@ export default function Footer() {
             <p className="text-sm mb-2">boltthreads@gmail.com</p>
             <p className="text-sm mb-2">Phone: (123) 456-7890</p>
             <p className="text-sm mb-4">India</p>
-            <div className="flex gap-3">
+            <div className="flex gap-2">
               <a href="#" className="text-white hover:text-gray-300 transition-colors"><IoLogoFacebook className="text-2xl" /></a>
               <a href="#" className="text-white hover:text-gray-300 transition-colors"><IoLogoLinkedin className="text-2xl" /></a>
               <a href="#" className="text-white hover:text-gray-300 transition-colors"><FaSquareTwitter className="text-2xl" /></a>

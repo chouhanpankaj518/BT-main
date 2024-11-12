@@ -41,7 +41,7 @@ export default function NewArrivals({addToCart}) {
  
 
   return (
-    <div className='xl:ml-0 ml-[-32px] p-10'>
+    <div className='xl:ml-0 ml-[-32px] p-10  xl:p-0'>
     <div className="py-8 ">
       <h1 className="text-3xl font-bold mb-8 text-center">New Arrivals</h1>
 

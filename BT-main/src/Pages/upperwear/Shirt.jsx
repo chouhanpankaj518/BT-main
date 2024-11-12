@@ -88,7 +88,7 @@ const Shirt = () => {
   ];
 
   return (
-    <div className='xl:ml-0 ml-[-30px]'>
+    <div className='xl:ml-0 ml-[-30px] p-10 xl:p-0'>
 
     <div className="container mx-auto px-4 mt-5">
       {

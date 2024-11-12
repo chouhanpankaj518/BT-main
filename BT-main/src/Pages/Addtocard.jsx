@@ -13,7 +13,7 @@ export default function AddToCart({cart}) {
     console.log("data",data)
   }
   
-  const totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  // const totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   if (!cart.length) {
     return (
@@ -23,7 +23,7 @@ export default function AddToCart({cart}) {
         </div>
         <h2 className="text-xl sm:text-2xl font-semibold text-gray-700 text-center">Your cart is empty</h2>
         <p className="mt-2 text-gray-500 text-center text-sm sm:text-base">Add some items to get started!</p>
-        <button className="mt-6 px-6 py-2 sm:py-3 bg-blue-600 text-white text-sm sm:text-base rounded-full hover:bg-blue-700 transition-colors " onClick={()=>navigate("/BT")}>
+        <button className="mt-6 px-6 py-2 sm:py-3 bg-blue-600 text-white text-sm sm:text-base rounded-full hover:bg-blue-700 transition-colors " onClick={()=>navigate("/")}>
           Continue Shopping
         </button>
       </div>
@@ -99,23 +99,23 @@ export default function AddToCart({cart}) {
        
           
           
-        
+{/*         
         
           <div className="flex justify-between text-lg sm:text-xl font-semibold text-gray-800 pt-2 border-t">
             <span>Total</span>
             <span>${totalAmount.toFixed(2)}</span>
           </div>
     
-    
+     */}
 
        
        
         <div className="mt-6 space-y-4">
-          <button className="w-full bg-blue-600 text-white py-3 sm:py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-sm sm:text-base">
+          {/* <button className="w-full bg-blue-600 text-white py-3 sm:py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-sm sm:text-base">
            Buy Now
-          </button>
+          </button> */}
           <button 
-          onClick={()=>navigate("/BT")}
+          onClick={()=>navigate("/")}
           className="w-full bg-gray-100 text-gray-700 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors text-sm sm:text-base" >
             Continue Shopping
           </button>

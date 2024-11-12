@@ -1,7 +1,7 @@
 import {  Star } from 'lucide-react';
 import Carousel from 'react-bootstrap/Carousel';
 import Footer from '../components/Footer';
-
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -42,14 +42,22 @@ const  popularProducts = [
   { id: 6, name: 'Cargo Jogger Jeans',
      price: 54.99, 
      image: 'https://media.istockphoto.com/id/2173495298/photo/pants-against-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=QgCj7tfeYpj0g1JhqhIetJGPucIr6vigJ-WRPK2bUtU=',
-      rating: 4.4 },
+     rating: 4.4
+  },
 ]
 
-export default function Trending() {
-
+export default function Trending({setshowcard}) {
+ 
+  const navigate = useNavigate();
+  
+  function hendlepage(id){
+    let data = popularProducts.filter(item=>item.id === id)
+    setshowcard(data)
+    navigate("/displaypage")
+  }
 
   return (
-    <div className='xl:ml-0 ml-[-32px] p-10'>
+    <div className='xl:ml-0 ml-[-32px] p-10 xl:p-0h '>
     <div className="px-0 py-8 overflow-hidden">
       
       <Carousel interval={3000} controls={true} indicators={true}>
@@ -102,7 +110,7 @@ export default function Trending() {
       <h2 className="text-2xl font-bold mb-4">Popular Products</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">      
           {popularProducts.map((product) => (
-          <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden xl:h-96 h-44">
+          <div key={product.id} onClick={() => hendlepage(product.id)} className=" cursor-pointer bg-white rounded-lg shadow-md overflow-hidden xl:h-96 h-44">
             <img src={product.image} alt={product.name} className="w-full xl:h-48 h-20  object-cover" />
             <div className="p-4">
               <h3 className="text-lg font-semibold mb-2 line-clamp-1">{product.name}</h3>

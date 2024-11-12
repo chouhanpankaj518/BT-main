@@ -173,7 +173,6 @@ export default function Home({setshowcard}) {
 
 
       <div 
-     
       className="mb-16 grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 mt-20"
       >
 
