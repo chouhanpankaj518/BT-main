@@ -43,7 +43,7 @@ export default function Navbar({count}) {
         onClick={toggleMenu}
       >
         {isMenuOpen ? 
-          <IoIosClose className='text-4xl mt-5 sticky  top-10 ml-10'/> :
+          <IoIosClose className='text-4xl mt-5 fixed '/> :
           <IoIosMenu className='text-4xl'/>
         }
       </button>

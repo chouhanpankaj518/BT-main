@@ -47,17 +47,17 @@ export default function PaymentPage() {
       "YES Bank"
     ]},
     // Foreign Banks
-    { category: "Foreign Banks", banks: [
-      "Standard Chartered Bank",
-      "HSBC Bank",
-      "Deutsche Bank",
-      "Citibank",
-      "Bank of America"
-    ]}
+    // { category: "Foreign Banks", banks: [
+    //   "Standard Chartered Bank",
+    //   "HSBC Bank",
+    //   "Deutsche Bank",
+    //   "Citibank",
+    //   "Bank of America"
+    // ]}
   ];
 
   return (
-    <div className="border  w-screen m-20 mx-auto p-6 space-y-6">
+    <div className="border bg-gray-200 shadow-2xl lg:w-[600px]  w-96 m-20 mx-auto p-5 space-y-6">
       <h1 className="text-2xl font-bold mb-4">Select Payment Method</h1>
       
       {/* Payment Methods */}
@@ -133,11 +133,11 @@ export default function PaymentPage() {
                   className="w-1/3 p-2 border rounded"
                 />
               </div>
-              <input
+              {/* <input
                 type="text"
                 placeholder="Card Holder Name"
                 className="w-full p-2 border rounded"
-              />
+              /> */}
             </div>
           )}
         </div>
@@ -176,15 +176,42 @@ export default function PaymentPage() {
                   className="w-1/3 p-2 border rounded"
                 />
               </div>
-              <input
+              {/* <input
                 type="text"
                 placeholder="Card Holder Name"
                 className="w-full p-2 border rounded"
-              />
+              /> */}
             </div>
           )}
         </div>
       </div>
+      
+    
+      {/* upi id */}
+      <div className="border rounded-lg p-4 hover:border-blue-500 cursor-pointer">
+          <label className="flex items-center space-x-3">
+            <input
+              type="radio"
+              name="paymentMethod"
+              value="UPIID"
+              checked={selectedMethod === 'UPIID'}
+              onChange={(e) => setSelectedMethod(e.target.value)}
+              className="w-4 h-4"
+            />
+            <span className="font-medium">UPI ID</span>
+          </label>
+          
+          {selectedMethod === 'UPIID' && (
+            <div className="mt-4 ml-7 space-y-2 flex align-middle lg:gap-5 gap-3 lg:w-96 w-48">
+              <input
+                type="text"
+                placeholder="Enter UPI ID"
+                className="w-full p-2 border rounded"
+              />
+              <button className="bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors w-32">Verify</button>
+            </div>
+          )}
+    </div>
 
       {/* Payment Button */}
       {selectedMethod && (
